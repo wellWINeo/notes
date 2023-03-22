@@ -1,0 +1,41 @@
+<div class="fx-col">
+  <material-input
+    [(ngModel)]="username"
+    label="Username"
+    autoFocus
+    floatingLabel
+    style="width: 100%"
+  >
+  </material-input>
+  <material-input
+    *ngIf="isRegister"
+    label="Email"
+    type="email"
+    [(ngModel)]="email"
+    autoFocus
+    floatingLabel
+    style="width: 100%"
+  >
+  </material-input>
+  <material-input
+    label="Password"
+    type="password"
+    [(ngModel)]="password"
+    autoFocus
+    floatingLabel
+    style="width: 100%"
+  >
+  </material-input>
+  <div class="fx-row">
+    <div>
+      <label for="isReigsterBox">Register?</label>
+      <material-checkbox
+        id="isRegisterBox"
+        [(ngModel)]="isRegister"
+      ></material-checkbox>
+    </div>
+    <material-button (click)="click()">{{
+      isRegister ? "Register" : "Log in"
+    }}</material-button>
+  </div>
+</div>

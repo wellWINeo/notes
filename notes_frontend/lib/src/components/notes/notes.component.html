@@ -1,0 +1,45 @@
+<div>
+  <material-input
+    label="Title"
+    autoFocus
+    floatingLabel
+    style="width: 100%"
+    [(ngModel)]="noteTitle"
+  >
+  </material-input>
+  <material-input
+    label="Description"
+    autoFocus
+    floatingLabel
+    style="width: 100%"
+    [(ngModel)]="noteDescription"
+  >
+  </material-input>
+  <material-input
+  label="Category"
+  autoFocus
+  floatingLabel
+  style="width: 100%"
+  [(ngModel)]="noteCategory"
+>
+</material-input>
+
+  <material-fab mini raised (trigger)="add()" [disabled]="noteTitle.isEmpty">
+    <material-icon icon="add"></material-icon>
+  </material-fab>
+</div>
+
+<p *ngIf="items.isEmpty">Nothing!</p>
+
+<div *ngIf="items.isNotEmpty">
+  <ul>
+    <li *ngFor="let item of items; let i = index">
+      <material-checkbox #done>
+      </material-checkbox>
+      <span [class.done]="done.checked">{{ item }}</span>
+      <material-fab mini (trigger)="remove(i)">
+        <material-icon icon="delete"></material-icon>
+      </material-fab>
+    </li>
+  </ul>
+</div>

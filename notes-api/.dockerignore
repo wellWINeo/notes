@@ -1,0 +1,4 @@
+test/*
+.dart_tool
+.git
+.gitignore
